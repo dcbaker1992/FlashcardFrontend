@@ -30,7 +30,6 @@ function App() {
   let getFlashcards = async (id) => {
     try{
       let response = await axios.get(`http://127.0.0.1:8000/collections/flashcards/${id}/`);
-      console.log(response.data) 
       setFlashcards(response.data)
       setSelectedCollection(id);
     }

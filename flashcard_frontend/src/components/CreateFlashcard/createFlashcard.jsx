@@ -9,9 +9,7 @@ const CreateFlashcard = (props) => {
 
     async function createFlashcards() {
         const addFlashcards = {...values, collection: props.selectedCollection};
-        console.log(addFlashcards);  // test
         try{
-            console.log("create a card request is called")  // test
             let response = await axios.post(`http://127.0.0.1:8000/flashcards/`, addFlashcards)
             setFlashcards(response.data)
         }

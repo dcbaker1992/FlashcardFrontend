@@ -5,7 +5,6 @@ import EditCard from '../EditFlashcards/editFlashcards';
 function FlashcardDetail(props) {
 
     const [flashcardNumber, setFlashcardNumber] = useState(0);
-    console.log(props)
 
     if(props.flashcards.length === 0){
         return(null)
@@ -13,30 +12,22 @@ function FlashcardDetail(props) {
 
     else{
         function goToNextCard(){
-            console.log("go to next card beginning of function")
             let tempFlashCardNumber = flashcardNumber;
             tempFlashCardNumber++;
             if(tempFlashCardNumber === props.flashcards.length){
                 tempFlashCardNumber = 0;
             }
             setFlashcardNumber(tempFlashCardNumber)
-            console.log(tempFlashCardNumber)
-            console.log("go to next card end of function")
         }
 
         function goToPreviousCard(){
-            console.log("go to previous card beginning of function")
             let tempFlashCardNumber = flashcardNumber;
             tempFlashCardNumber--;
             if(tempFlashCardNumber < 0){
                 tempFlashCardNumber = props.flashcards.length - 1
             }
             setFlashcardNumber(tempFlashCardNumber)
-            console.log(tempFlashCardNumber)
-            console.log("go to previous card end of function")
         }
-        
-        console.log(props.flashcards)
 
         return(
             <div className='row row-spacer bg-dark text-light'>
